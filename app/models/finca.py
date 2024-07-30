@@ -6,6 +6,7 @@ class Finca(db.Model):
     nombre = db.Column(db.String(100), nullable=False)
     ubicacion = db.Column(db.String(200), nullable=False)
     tamaño = db.Column(db.Float, nullable=False)
+    
     empleados = db.relationship('Empleado', backref='finca', lazy=True)
     animales = db.relationship('Animal', backref='finca', lazy=True)
     items = db.relationship('Inventario', backref='finca', lazy=True)
