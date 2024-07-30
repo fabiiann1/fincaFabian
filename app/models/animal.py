@@ -11,4 +11,4 @@ class Animal(db.Model):
     finca_id = db.Column(db.Integer, db.ForeignKey('finca.id'), nullable=False)
     empleado_id = db.Column(db.Integer, db.ForeignKey('empleado.id'), nullable=False)
     proveedor_id = db.Column(db.Integer, db.ForeignKey('proveedor.id'), nullable=False)
-    medicamentos = db.relationship('Medicamento', backref='animal', lazy=True)
+    medicamentos = db.relationship('Medicamento', backref='animal', lazy=True)  
