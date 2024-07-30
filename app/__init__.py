@@ -10,8 +10,8 @@ def create_app():
     db.init_app(app)
 
 
-    from app.routes import book_routes, author_routes
-    app.register_blueprint(author_routes.bp)
-    app.register_blueprint(book_routes.bp)
+    from app.routes import home_route
+    app.register_blueprint(home_route.bp)
+    
 
     return app
