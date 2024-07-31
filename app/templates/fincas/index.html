@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Movies</title>
+</head>x|
+<body>
+    <h1>Lista de Fincas</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Ubicacion</th>
+            <th>Tamaño</th>
+
+        {% for fincas in data %}
+            <tr>
+                <td>{{ fincas.id }}</td>
+                <td>{{ fincas.nombre }}</td>
+                <td>{{ fincas.ubicacion }}</td>
+                <td>{{ fincas.tamaño }}</td>
+
+                <td>    
+                    <a href="{{ url_for('finca.edit', id=fincas.id) }}">Editar</a>
+                    <a href="{{ url_for('finca.delete', id=fincas.id) }}">Eliminar</a>
+                    <!-- Agrega aquí el enlace para eliminar -->
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('finca.add') }}">Agregar Finca</a>
+    <br>
+    <a href="{{ url_for('finca.index') }}">Ir a fincas</a>
+</body>
+</html>
+

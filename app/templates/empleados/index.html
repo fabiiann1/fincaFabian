@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Empleados</title>
+</head>
+<body>
+    <h1>Lista de Empleados</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Cargo</th>
+            <th>FechaIngreso</th>
+        </tr>
+        {% for empleados in data %}
+            <tr>
+                <td>{{ empleado.id }}</td>
+                <td>{{ empleado.nombre }}</td>
+                <td>{{ empleado.cargo }}</td>
+                <td>{{ empleado.fechaIngreso }}</td>
+
+                <td>    
+                    <a href="{{ url_for('empleado.edit', id=empleados.id) }}">Editar</a>
+                    <a href="{{ url_for('empleado.delete', id=empleados.id) }}">Eliminar</a>
+                    <!-- Agrega aquí el enlace para eliminar -->
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('empleado.add') }}">Agregar Peliculas</a>
+    <br>
+    
+</html>
+

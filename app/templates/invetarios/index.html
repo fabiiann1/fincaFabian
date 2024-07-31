@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Movies</title>
+</head>x|
+<body>
+    <h1>Lista de Inventarios</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Categoria</th>
+            <th>Descipcion</th>
+            <th>Cantidad</th>
+            <th>fechaAdquisicion</th>
+        </tr>
+        {% for inventarios data %}
+            <tr>
+                <td>{{ inventarios.id }}</td>
+                <td>{{ inventarios.nombre }}</td>
+                <td>{{ inventarios.categoria }}</td>
+                <td>{{ inventarios.descripcion }}</td>
+                <td>{{ inventarios.cantidad }}</td>
+
+                <td>    
+                    <a href="{{ url_for('inventario.edit', id=inventarios.id) }}">Editar</a>
+                    <a href="{{ url_for('inventario.delete', id=inventarios.id) }}">Eliminar</a>
+                    <!-- Agrega aquí el enlace para eliminar -->
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('inventario.add') }}">Agregar Peliculas</a>
+    <br>
+   
+</body>
+</html>
+
