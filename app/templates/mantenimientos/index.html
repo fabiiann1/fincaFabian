@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Movies</title>
+</head>x|
+<body>
+    <h1>Listado de Mantenimientos</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Descripcion</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+        </tr>
+        {% for mmantenimientos in data %}
+            <tr>
+                <td>{{ mantenimientos.id }}</td>
+                <td>{{ mantenimientos.Descripcion }}</td>
+                <td>{{ mantenimientos.Fecha }}</td>
+
+                <td>    
+                    <a href="{{ url_for('mantenimientos.edit', id=mantenimientos.id) }}">Editar</a>
+                    <a href="{{ url_for('mantenimiento.delete', id=mantenimientos.id) }}">Eliminar</a>
+                    <!-- Agrega aquí el enlace para eliminar -->
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('mantenimiento.add') }}">Agregar Mantenimiento</a>
+    <br>
+    
+</body>
+</html>
+
