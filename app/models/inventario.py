@@ -1,6 +1,6 @@
 from app import db 
 
-class Inventario(db.Model):
+class Inventarios(db.Model):
     __tablename__='inventario'
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(100), nullable=False)
@@ -11,4 +11,5 @@ class Inventario(db.Model):
     finca_id = db.Column(db.Integer, db.ForeignKey('finca.id'), nullable=False)
     empleado_id = db.Column(db.Integer, db.ForeignKey('empleado.id'), nullable=False)
     proveedor_id = db.Column(db.Integer, db.ForeignKey('proveedor.id'), nullable=False)
-    mantenimientos = db.relationship('Mantenimiento', backref='inventario', lazy=True)
+
+    mantenimiento = db.relationship('Mantenimientos', back_populates='inventario')

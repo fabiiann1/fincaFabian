@@ -1,6 +1,6 @@
 from app import db 
 
-class Mantenimiento(db.Model):
+class Mantenimientos(db.Model):
     __tablname__='mantenimiento'
     id = db.Column(db.Integer, primary_key=True)
     descripcion = db.Column(db.Text, nullable=False)
