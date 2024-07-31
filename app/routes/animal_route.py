@@ -6,15 +6,16 @@ bp = Blueprint('animal', __name__)
 def index():
     from app.models.animal import Animal
     data = Animal.query.all()
-    return render_template('animales/index.html', data=data)
+    return render_template('animals/index.html', data=data)
 
-@bp.route('/Animal/add', methods=['GET', 'POST'])
+@bp.route('/animal/add', methods=['GET', 'POST'])
 def add():
     from app.models.animal import Animal
     from app import db
 
 
     if request.method == 'POST':
+        
         nombre = request.form['nombre']
         especie = request.form['especie']
         raza = request.form['raza']
@@ -26,7 +27,7 @@ def add():
         
         return redirect(url_for('animal.index'))
 
-    return render_template('animales/add.html')
+    return render_template('animals/add.html')
 
 @bp.route('/Animal/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
@@ -44,7 +45,7 @@ def edit(id):
         db.session.commit()
         return redirect(url_for('animal.index'))
 
-    return render_template('animales/edit.html', actor=actor)
+    return render_template('animals/edit.html', actor=actor)
     
 
 @bp.route('/Animal/delete/<int:id>')
