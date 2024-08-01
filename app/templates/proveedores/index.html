@@ -8,32 +8,30 @@
     <title>Animal</title>
 </head>
 <body>
-    <h1>Lista de Animales</h1>
+    <h1>Lista de Proveedores</h1>
     <table>
         <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Especie</th>
-            <th>Raza</th>
-            <th>Edad</th>
-            <th>Tipo</th>
+            <th>Contacto</th>
+            <th>Direccion</th>
+            
         </tr>
-        {% for animal in data %}
+        {% for proveedor in data %}
             <tr>
-                <td>{{ animal.id }}</td>
-                <td>{{ animal.nombre }}</td>
-                <td>{{ animal.especie }}</td>
-                <td>{{ animal.raza }}</td>
+                <td>{{ proveedor.id }}</td>
+                <td>{{ proveedor.nombre }}</td>
+                <td>{{ proveedor.contacto }}</td>
+                <td>{{ proveedor.direecion }}</td>
                 <td>
-                    <a href="{{ url_for('animal.edit', id=animal.id) }}">Editar</a>
-                    <a href="{{ url_for('animal.list', id=animal.id) }}">Listar Libros del Autor</a>
-                    <a href="{{ url_for('animal.delete', id=animal.id) }}">Eliminar</a>
+                    <a href="{{ url_for('proveedor.edit', id=proveedor.id) }}">Editar</a>
+                    <a href="{{ url_for('proveedor.delete', id=proveedor.id) }}">Eliminar</a>
                     <!-- Agrega aquí el enlace para eliminar -->
                 </td>
             </tr>
         {% endfor %}
     </table>
-    <a href="{{ url_for('animal.add') }}">Agregar Animal</a>
+    <a href="{{ url_for('proveedor.add') }}">Agregar proveedor</a>
     <br>
     <a href="{{ url_for('home.home') }}">Volver al Home</a>
    

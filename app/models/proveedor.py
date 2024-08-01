@@ -6,3 +6,6 @@ class Proveedores(db.Model):
     nombre = db.Column(db.String(100), nullable=False)
     contacto = db.Column(db.String(100), nullable=False)
     direccion = db.Column(db.String(200), nullable=False)
+
+
+    animal = db.relationship('Animales',back_populates='proveedor')

@@ -7,7 +7,7 @@ class Fincas(db.Model):
     ubicacion = db.Column(db.String(200), nullable=False)
     tamaño = db.Column(db.Float, nullable=False)
     
-    empleados = db.relationship('Empleados', back_populates='finca')
-    animales = db.relationship('Animales', back_populates='finca')
+    empleado = db.relationship('Empleados', back_populates='finca')
+    animal = db.relationship('Animales', back_populates='finca')
     inventario = db.relationship('Inventarios', back_populates='finca')
-    visitas = db.relationship('Visitas', back_populates='finca')
+    visita = db.relationship('Visitas', back_populates='finca')

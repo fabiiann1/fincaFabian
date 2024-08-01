@@ -9,7 +9,7 @@ def index():
     data = Animales.query.all()
     return render_template('animals/index.html', data=data)
 
-@bp.route('/animal/add', methods=['GET', 'POST'])
+@bp.route('/Animal/add', methods=['GET', 'POST'])
 def add():
     if request.method == 'POST':
         

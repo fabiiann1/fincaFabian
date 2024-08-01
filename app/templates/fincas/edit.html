@@ -12,13 +12,13 @@
     <form action="{{ url_for('finca.edit', id=finca.id) }}" method="post">
 
         <label for="">Nombre:</label>
-        <input type="text" id="nombre" name="" value="{{ nombre.titulo }}" required>
+        <input type="text" id="nombre" name="nombre" value="{{ finca.nombre }}" required>
 
         <label for="">Ubicacion:</label>
-        <input type="text" id="nombre" name="" value="{{ nombre.titulo }}" required>
+        <input type="text" id="nombre" name="ubicacion" value="{{ finca.ubicacion }}" required>
 
         <label for="">Tamaño:</label>
-        <input type="text" id="Tamaño" name="" value="{{ tamaño.titulo }}" required>
+        <input type="text" id="Tamaño" name="tamaño" value="{{ finca.tamaño }}" required>
 
         <button type="submit">Actualizar Finca</button>
     </form>

@@ -9,3 +9,5 @@ class Medicamentos(db.Model):
     dosis = db.Column(db.String(50), nullable=False)
     animal_id = db.Column(db.Integer, db.ForeignKey('animal.id'), nullable=False)
     empleado_id = db.Column(db.Integer, db.ForeignKey('empleado.id'), nullable=False)
+
+    empleado = db.relationship('Empleados',back_populates='medicamento')
