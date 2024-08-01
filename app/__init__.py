@@ -10,9 +10,10 @@ def create_app():
     db.init_app(app)
 
 
-    from app.routes import home_route,finca_routes
+    from app.routes import home_route,finca_routes,animal_route
     app.register_blueprint(home_route.bp)
     app.register_blueprint(finca_routes.bp)
+    app.register_blueprint(animal_route.bp)
     
 
     return app

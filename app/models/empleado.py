@@ -1,6 +1,6 @@
 from app import db
 
-class Empleado(db.Model):
+class Empleados(db.Model):
     __tablename__='empleado'
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(100), nullable=False)
@@ -9,7 +9,7 @@ class Empleado(db.Model):
     finca_id = db.Column(db.Integer, db.ForeignKey('finca.id'), nullable=False)
 
     
-    items = db.relationship('Inventario', back_populates='empleado')
-    medicamentos = db.relationship('Medicamento', back_populates='empleado')
-    mantenimientos = db.relationship('Mantenimiento', back_populates='empleado')
-    visitas = db.relationship('Visita', back_populates='empleado')
+    inventario = db.relationship('Inventarios', back_populates='empleado')
+    medicamento = db.relationship('Medicamentos', back_populates='empleado')
+    mantenimiento = db.relationship('Mantenimientos', back_populates='empleado')
+    visita = db.relationship('Visitas', back_populates='empleado')

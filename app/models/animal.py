@@ -13,6 +13,6 @@ class Animales(db.Model):
     empleado_id = db.Column(db.Integer, db.ForeignKey('empleado.id'), nullable=False)
     proveedor_id = db.Column(db.Integer, db.ForeignKey('proveedor.id'), nullable=False)
 
-    medicamento = db.relationship('Medicamento', backref='animal')
+    medicamento = db.relationship('Medicamentos', backref='animal')
     empleado = db.relationship('Animales', back_populates='animal')
-    proveedor = db.relationship('Proverdores',back_populates='animal')
+    proveedor = db.relationship('Proveedores',back_populates='animal')
