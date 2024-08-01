@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Editar Visita</h1>
+    <form action="{{ url_for('visita.edit', id=visita.id) }}" method="post">
+        
+        <label for="fecha">Fecha:</label>
+        <input type="text" id="fecha" name="fecha" value="{{ visita.fecha }}" required>
+        
+        <label for="motivo">Motivo:</label>
+        <input type="text" id="motivo" name="motivo" value="{{ visita.motivo }}" required>
+        
+        <label for="finca_id">Finca:</label>
+        <select name="finca_id" id="finca_id">
+            {% for fincas in movies %}
+                <option value="{{ finca.id }}" {% if finca.id == fincas.finca_id %} selected {% endif %}>{{ finca.nombre }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="empleado_id">Empleado:</label>
+        <select name="empleado_id" id="empleado_id">
+            {% for empleados in movies %}
+                <option value="{{ finca.id }}" {% if finca.id == empleado.empleado_id %} selected {% endif %}>{{ empleado.nombre }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Actualizar Visita</button>
+    </form>
+</body>
+</html>
