@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Movies</title>
-</head>x|
+</head>
 <body>
     <h1>Lista de Inventarios</h1>
     <table>
@@ -16,26 +16,32 @@
             <th>Categoria</th>
             <th>Descipcion</th>
             <th>Cantidad</th>
-            <th>fechaAdquisicion</th>
+            <th>Fecha Adquisicion</th>
+            <th>Finca</th>
+            <th>Empleado</th>
+            <th>Proveedor</th>
             <th>Acciones</th>
         </tr>
-        {% for inventarios data %}
+        {% for inventario in data %}
             <tr>
-                <td>{{ inventarios.id }}</td>
-                <td>{{ inventarios.nombre }}</td>
-                <td>{{ inventarios.categoria }}</td>
-                <td>{{ inventarios.descripcion }}</td>
-                <td>{{ inventarios.cantidad }}</td>
+                <td>{{ inventario.id }}</td>
+                <td>{{ inventario.nombre }}</td>
+                <td>{{ inventario.categoria }}</td>
+                <td>{{ inventario.descripcion }}</td>
+                <td>{{ inventario.cantidad }}</td>
+                <td>{{ inventario.finca.nombre}}</td>
+                <td>{{ inventario.empleado.nombre}}</td>
+                <td>{{ inventario.proveedor_id}}</td>
 
                 <td>    
-                    <a href="{{ url_for('inventario.edit', id=inventarios.id) }}">Editar</a>
-                    <a href="{{ url_for('inventario.delete', id=inventarios.id) }}">Eliminar</a>
+                    <a href="{{ url_for('inventario.edit', id=inventario.id) }}">Editar</a>
+                    <a href="{{ url_for('inventario.delete', id=inventario.id) }}">Eliminar</a>
                     <!-- Agrega aquí el enlace para eliminar -->
                 </td>
             </tr>
         {% endfor %}
     </table>
-    <a href="{{ url_for('inventario.add') }}">Agregar Peliculas</a>
+    <a href="{{ url_for('inventario.add') }}">Agregar Inventario</a>
     <br>
    
 </body>

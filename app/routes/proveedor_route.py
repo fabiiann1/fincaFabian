@@ -1,7 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, jsonify
 from app.models.proveedor import Proveedores
-from app.models.empleado import Empleados
-from app.models.finca import Fincas
 from app import db
 
 bp = Blueprint('proveedor', __name__)
@@ -16,46 +14,45 @@ def add():
     if request.method == 'POST':
         
         nombre = request.form['nombre']
-        cargo = request.form['cargo']
-        fecha_ingreso = request.form['fecha_ingreso']
-        finca_id = request.form['finca_id']
+        contacto = request.form['contacto']
+        direccion = request.form['direccion']
         
-        new_empleado = Empleados(nombre=nombre,cargo=cargo,fecha_ingreso=fecha_ingreso,finca_id=finca_id)
-        db.session.add(new_empleado)
+        new_proveedor = Proveedores(nombre=nombre,contacto=contacto,direccion=direccion)
+        db.session.add(new_proveedor)
         db.session.commit()
 
         return redirect(url_for('proveedor.index'))
         
-    fincas = Fincas.query.all()
+    
 
-    return render_template('proveedores/add.html',fincas=fincas)  
+    return render_template('proveedores/add.html')  
 
 @bp.route('/proveedores/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
 
-    empleado = Empleados.query.get_or_404(id)
+    proveedor = Proveedores.query.get_or_404(id)
 
     if request.method == 'POST':
 
 
-        empleado.nombre = request.form['nombre']
-        empleado.fecha = request.form['fecha_ingreso']
-        empleado.finca_id = request.form['finca_id']
+        proveedor.nombre = request.form['nombre']
+        proveedor.contacto = request.form['contacto']
+        proveedor.direccion = request.form['direccion']
         
 
         db.session.commit()
-        return redirect(url_for('empleado.index'))
-    fincas = Fincas.query.all()
-
-    return render_template('empleados/edit.html', empleado=empleado,fincas=fincas)
+        return redirect(url_for('proveedor.index'))
     
 
-@bp.route('/empleado/delete/<int:id>')
+    return render_template('proveedores/edit.html', proveedor=proveedor)
+    
+
+@bp.route('/proveedor/delete/<int:id>')
 def delete(id):
     
-    empleado = Empleados.query.get_or_404(id)
+    proveedor = Proveedores.query.get_or_404(id)
     
-    db.session.delete(empleado)
+    db.session.delete(proveedor)
     db.session.commit()
 
-    return redirect(url_for('empleado.index'))
+    return redirect(url_for('proveedor.index'))
