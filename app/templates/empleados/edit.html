@@ -12,15 +12,24 @@
     <form action="{{ url_for('empleado.edit', id=empleado.id) }}" method="post">
         
         <label for="nombre">Nombre:</label>
-        <input type="nombre" id="nommbre" name="nombre" value="{{ empleado.nombre }}" required>
+        <input type="text" id="nommbre" name="nombre" value="{{ empleado.nombre }}" required>
         
         <label for="cargo">Cargo:</label>
-        <input type="cargo" id="cargo" name="cargo" value="{{ empleado.cargo }}" required>
+        <input type="text" id="cargo" name="cargo" value="{{ empleado.cargo }}" required>
 
-        <label for="fechaIngreso">fechaIngreso</label>
-        <input type="fechaIngreso" id="fechaIngreso" name="fechaIngreso" value="{{ empleado.fechaIngreso }}" required>
+        <label for="fecha_ingreso">fecha Ingreso</label>
+        <input type="date" id="fecha_ingreso" name="fecha_ingreso" value="{{ empleado.fecha_ingreso }}" required>
+
+        <label for="finca_id">Finca</label>
+        <select id="finca_id" name="finca_id">
+            {% for finca in fincas %}
+                <option value="{{ finca.id }}">{{ finca.nombre }}</option>
+            {% endfor %}
+        </select>
+
 
         <button type="submit">Actualizar Empleado</button>
+        
     </form>
 </body>
 </html>

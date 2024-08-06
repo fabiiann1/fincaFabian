@@ -15,13 +15,17 @@
             <th>Nombre</th>
             <th>Cargo</th>
             <th>FechaIngreso</th>
+            <th>Finca</th>
+            <th>Acciones</th>
         </tr>
-        {% for empleados in data %}
+        {% for empleados in data %} 
             <tr>
-                <td>{{ empleado.id }}</td>
-                <td>{{ empleado.nombre }}</td>
-                <td>{{ empleado.cargo }}</td>
-                <td>{{ empleado.fechaIngreso }}</td>
+                <td>{{ empleados.id }}</td>
+                <td>{{ empleados.nombre }}</td>
+                <td>{{ empleados.cargo }}</td>
+                <td>{{ empleados.fecha_ingreso }}</td>
+                <td>{{ empleados.finca.nombre }}</td>
+             
 
                 <td>    
                     <a href="{{ url_for('empleado.edit', id=empleados.id) }}">Editar</a>
@@ -32,6 +36,7 @@
         {% endfor %}
     </table>
     <a href="{{ url_for('empleado.add') }}">Agregar Empleado</a>
+    <a href="{{ url_for('home.home') }}">Volver al Home</a>
     <br>
     
 </html>

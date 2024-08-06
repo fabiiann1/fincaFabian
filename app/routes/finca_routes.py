@@ -17,7 +17,6 @@ def add():
         ubicacion = request.form['ubicacion']
         tamaño = request.form['tamaño']
         
-    
         new_animal = Fincas(nombre=nombre,ubicacion=ubicacion,tamaño=tamaño)
         db.session.add(new_animal)
         db.session.commit()

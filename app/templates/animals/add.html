@@ -23,6 +23,29 @@
         <label for="edad">Edad</label>
         <input type="text" id="edad" name="edad" required>
 
+        <label for="finca_id">Finca:</label>
+        <select id="finca_id" name="finca_id">
+            {% for finca in fincas %}
+                <option value="{{ finca.id }}">{{ finca.nombre }}</option>
+            {% endfor %}
+        </select>
+        
+        <label for="empleado_id">Empleador:</label>
+        <select id="empleado_id" name="empleado_id">
+            {% for empleado in empleados %}
+                <option value="{{ empleado.id }}">{{ empleado.nombre }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="proveedor_id">Proveedor:</label>
+        <select id="proveedor_id" name="proveedor_id">
+            {% for proveedor in proveedores %}
+                <option value="{{ proveedor.id }}">{{ proveedor.nombre }}</option>
+            {% endfor %}
+        </select>
+
+
+
         
         
         <button type="submit">Agregar Animal</button>

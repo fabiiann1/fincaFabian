@@ -17,6 +17,9 @@
             <th>Raza</th>
             <th>Edad</th>
             <th>Tipo</th>
+            <th>Finca</th>
+            <th>Empleado</th>
+            <th>Proveedor</th>
         </tr>
         {% for animal in data %}
             <tr>
@@ -26,7 +29,6 @@
                 <td>{{ animal.raza }}</td>
                 <td>
                     <a href="{{ url_for('animal.edit', id=animal.id) }}">Editar</a>
-                    <a href="{{ url_for('animal.list', id=animal.id) }}">Listar Libros del Autor</a>
                     <a href="{{ url_for('animal.delete', id=animal.id) }}">Eliminar</a>
                     <!-- Agrega aquí el enlace para eliminar -->
                 </td>
