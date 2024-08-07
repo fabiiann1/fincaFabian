@@ -7,6 +7,7 @@ class Medicamentos(db.Model):
     descripcion = db.Column(db.Text, nullable=False)
     fecha_administracion = db.Column(db.Date, nullable=False)
     dosis = db.Column(db.String(50), nullable=False)
+    
     animal_id = db.Column(db.Integer, db.ForeignKey('animal.id'), nullable=False)
     empleado_id = db.Column(db.Integer, db.ForeignKey('empleado.id'), nullable=False)
 

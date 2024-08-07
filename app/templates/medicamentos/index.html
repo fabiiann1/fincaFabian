@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>medica</title>
+</head>
+<body>
+    <h1>Lista de Medicamentos</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Fecha Administracion</th>
+            <th>Dosis</th>
+            <th>Animal</th>
+            <th>Empleado</th>
+            <th>Acciones</th>
+        </tr>
+        {% for medicamento in data %}
+            <tr>
+                <td>{{ medicamento.id }}</td>
+                <td>{{ medicamento.nombre }}</td>
+                <td>{{ medicamento.descripcion }}</td>
+                <td>{{ medicamento.fecha_administracion }}</td>
+                <td>{{ medicamento.dosis }}</td>
+                <td>{{ medicamento.animal.nombre}}</td>
+                <td>{{ medicamento.empleado.nombre}}</td>
+                
+                
+                <td> 
+                    <a href="{{ url_for('medicamento.edit', id=.medicamento.id) }}">Editar</a>
+                    <a href="{{ url_for('medicamento.delete', id=.medicamento.id) }}">Eliminar</a>
+                    <!-- Agrega aquí el enlace para eliminar -->
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('medicamento.add') }}">Agregar Medicamento</a>
+    <br>
+    <a href="{{ url_for('home.home') }}">Volver al home</a>
+</body>
+</html>

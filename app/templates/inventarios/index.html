@@ -29,6 +29,7 @@
                 <td>{{ inventario.categoria }}</td>
                 <td>{{ inventario.descripcion }}</td>
                 <td>{{ inventario.cantidad }}</td>
+                <td>{{ inventario.fecha_adquisicion }}</td>
                 <td>{{ inventario.finca.nombre}}</td>
                 <td>{{ inventario.empleado.nombre}}</td>
                 <td>{{ inventario.proveedor_id}}</td>
@@ -42,6 +43,7 @@
         {% endfor %}
     </table>
     <a href="{{ url_for('inventario.add') }}">Agregar Inventario</a>
+    <a href="{{ url_for('home.home') }}">Volver al Home</a>
     <br>
    
 </body>

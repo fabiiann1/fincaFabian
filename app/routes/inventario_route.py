@@ -36,24 +36,30 @@ def add():
 
     return render_template('inventarios/add.html',fincas=fincas,empleados=empleados,proveedores=proveedores)  
 
-@bp.route('/inventarios/edit/<int:id>', methods=['GET', 'POST'])
+@bp.route('/inventario/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
 
-    inventarios = Inventarios.query.get_or_404(id)
+    inventario = Inventarios.query.get_or_404(id)
 
     if request.method == 'POST':
 
-        inventarios.nombre = request.form['nombre']
-        inventarios.categoria = request.form['categoria']
-        inventarios.descripcion = request.form['descripcion']
-        inventarios.cantidad= request.form['cantidad']
-        inventarios.fecha_adquisicion = request.form['fecha_adquisicion']
-        
+        inventario.nombre = request.form['nombre']
+        inventario.categoria = request.form['categoria']
+        inventario.descripcion = request.form['descripcion']
+        inventario.cantidad= request.form['cantidad']
+        inventario.fecha_adquisicion = request.form['fecha_adquisicion']
+        inventario.finca_id = request.form['finca_id']
+        inventario.empleado_id = request.form['empleado_id']
+        inventario.proveedor_id = request.form['proveedor_id'] 
 
         db.session.commit()
         return redirect(url_for('inventario.index'))
+    
+    fincas = Fincas.query.all()
+    empleados = Empleados.query.all()
+    proveedores = Proveedores.query.all()
 
-    return render_template('inventarios/edit.html')
+    return render_template('inventarios/edit.html', inventario=inventario,fincas=fincas,empleados=empleados,proveedores=proveedores)
     
 
 @bp.route('/inventario/delete/<int:id>')
