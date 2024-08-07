@@ -21,10 +21,10 @@ def add():
         raza = request.form['raza']
         edad = request.form['edad']
         finca_id = request.form['finca_id']
-        empleado_id = request.fomr['empleado.id']
-        proveedor_id = request.fomr['proveedor_id']
+        empleado_id = request.form['empleado_id']
+        proveedor_id = request.form['proveedor_id']
     
-        new_animal = Animales(nombre=nombre,especie=especie,raza=raza,edad=edad,finca_id=finca_id,empleado_id=empleado_id,preveedor_id=proveedor_id)
+        new_animal = Animales(nombre=nombre,especie=especie,raza=raza,edad=edad,finca_id=finca_id,empleado_id=empleado_id,proveedor_id=proveedor_id)
         db.session.add(new_animal)
         db.session.commit()
         

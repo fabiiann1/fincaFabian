@@ -1,4 +1,4 @@
-Nacionalidad<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,21 +23,21 @@ Nacionalidad<!DOCTYPE html>
         <label for="dosis">Dosis:</label>
         <input type="text" id="dosis" name="dosis" value="{{ medicamento.dosis }}" required>
         
-        <label for="animal">Animal</label>
-        <select id="animal" name="animal">
+        <label for="animal_id">Animal</label>
+        <select id="animal_id" name="animal_id">
             {% for animal in animales %}
                 <option value="{{ animal.id }}">{{ animal.nombre }}</option>
             {% endfor %}
         </select>
         
-        <label for="empleado">Empleado</label>
-        <select id="empleado" name="empleado">
+        <label for="empleado_id">Empleado</label>
+        <select id="empleado_id" name="empleado_id">
             {% for empleado in empleados %}
                 <option value="{{ empleado.id }}">{{ empleado.nombre }}</option>
             {% endfor %}
         </select>
 
-        <button type="submit">Actualizar Actor</button>
+        <button type="submit">Actualizar Medicamento</button>
     </form>
 </body>
 </html>

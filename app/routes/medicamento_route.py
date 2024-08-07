@@ -47,8 +47,6 @@ def edit(id):
         medicamento.dosis = request.form['dosis']
         medicamento.animal_id = request.form['animal_id']
         medicamento.empleado_id = request.form['empleado_id']
-        
-        
 
         db.session.commit()
         return redirect(url_for('medicamento.index'))

@@ -29,6 +29,15 @@
                 <option value="{{ animal.id }}">{{ animal.nombre }}</option>
             {% endfor %}
         </select>
+
+        <label for="empleado_id">Empleador:</label>
+        <select id="empleado_id" name="empleado_id">
+            {% for empleado in empleados %}
+                <option value="{{ empleado.id }}">{{ empleado.nombre }}</option>
+            {% endfor %}
+        </select>
+
+
         <button type="submit">Agregar Medicamento</button>
     </form>
 </body>
