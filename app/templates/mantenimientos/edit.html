@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Editar Mantenimiento</h1>
-    <form action="{{ url_for('movie.edit', id=movie.id) }}" method="post">
+    <form action="{{ url_for('mantenimiento.edit', id=mantenimiento.id) }}" method="post">
 
         <label for="descripcion">Descripcion</label>
         <input type="text" id="descripcion" name="descripcion" value="{{ mantenimiento.descripcion}}" required>
@@ -17,6 +17,21 @@
         <label for="fecha">Fecha:</label>
         <input type="text" id="fecha" name="fecha" value="{{ mantenimiento.fecha}}" required>
         
+        <label for="inventario_id">Inventario:</label>
+        <select id="inventario_id" name="inventario_id">
+            {% for inventario in inventarios %}
+                <option value="{{ inventario.id }}">{{ inventario.nombre }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="empleado_id">Empleado:</label>
+        <select id="empleado_id" name="empleado_id">
+            {% for empleado in empleados %}
+                <option value="{{ empleado.id }}">{{ empleado.nombre }}</option>
+            {% endfor %}
+        </select>
+
+       
         <button type="submit">Actualizar Mantenimiento</button>
     </form>
 </body>

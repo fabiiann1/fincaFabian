@@ -9,4 +9,4 @@ class Proveedores(db.Model):
 
 
     animal = db.relationship('Animales',back_populates='proveedor')
-    
+    inventario = db.relationship('Inventarios',back_populates='proveedor')

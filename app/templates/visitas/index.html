@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Movies</title>
-</head>x|
+    <title>Visitas</title>
+</head>
 <body>
     <h1>Lista de Visitas</h1>
     <table>
@@ -14,24 +14,27 @@
             <th>ID</th>
             <th>Fecha</th>
             <th>Motivo</th>
+            <th>Finca</th>
         </tr>   
-        {% for visitas in data %}
+        {% for visita in data %}
             <tr>
-                <td>{{ visitas.id }}</td>
-                <td>{{ visitas.fecha }}</td>
-                <td>{{ visitas.motivo }}</td>
-                <td>{{ visitas.finca_id.nombre }}</td>
-                <td>{{ visitas.empleado_id.nombre }}</td>
+                <td>{{ visita.id }}</td>
+                <td>{{ visita.fecha }}</td>
+                <td>{{ visita.motivo }}</td>
+                <td>{{ visita.finca.nombre }}</td>
+
+             
+                
                 
                 <td>    
-                    <a href="{{ url_for('visita.edit', id=visitas.id) }}">Editar</a>
-                    <a href="{{ url_for('visita.delete', id=visitas.id) }}">Eliminar</a>
+                    <a href="{{ url_for('visita.edit', id=visita.id) }}">Editar</a>
+                    <a href="{{ url_for('visita.delete', id=visita.id) }}">Eliminar</a>
                     <!-- Agrega aquí el enlace para eliminar -->
                 </td>
             </tr>
         {% endfor %}
     </table>
-    <a href="{{ url_for('visita.add') }}">Agregar Peliculas</a>
+    <a href="{{ url_for('visita.add') }}">Agregar Visitas</a>
     <br>
     <a href="{{ url_for('home.home') }}">Volver al home</a>
     

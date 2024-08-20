@@ -7,7 +7,7 @@ class Visitas(db.Model):
     motivo = db.Column(db.Text, nullable=False)
 
     finca_id = db.Column(db.Integer, db.ForeignKey('finca.id'), nullable=False)
-    empleado_id = db.Column(db.Integer, db.ForeignKey('empleado.id'), nullable=False)
+    
 
-    empleado = db.relationship('Empleados',back_populates='visita')
+    
     finca = db.relationship('Fincas',back_populates='visita')

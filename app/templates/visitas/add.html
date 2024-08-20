@@ -12,22 +12,15 @@
     <form action="{{ url_for('visita.add') }}" method="post">
         
         <label for="fecha">Fecha:</label>
-        <input type="text" id="fecha" name="fecha" required>
+        <input type="date" id="fecha" name="fecha" required>
         
         <label for="motivo">Motivo:</label>
         <input type="text" id="Motivo" name="motivo" required>
         
-        <label for="fincaId">Finca:</label>
-        <select id="fincaId" name="fincaId">
-            {% for fincas in data %}
+        <label for="finca_id">Finca:</label>
+        <select id="finca_id" name="finca_id">
+            {% for finca in fincas %}
                 <option value="{{ finca.id }}">{{ finca.nombre }}</option>
-            {% endfor %}
-        </select>
-
-        <label for="empleadoId">Empleado:</label>
-        <select id="empleadoId" name="empleadoId">
-            {% for empleados in data %}
-                <option value="{{ empleado.id }}">{{ empleado.nombre }}</option>
             {% endfor %}
         </select>
         <button type="submit">Agregar Visita</button>

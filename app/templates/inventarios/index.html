@@ -32,7 +32,7 @@
                 <td>{{ inventario.fecha_adquisicion }}</td>
                 <td>{{ inventario.finca.nombre}}</td>
                 <td>{{ inventario.empleado.nombre}}</td>
-                <td>{{ inventario.proveedor_id}}</td>
+                <td>{{ inventario.proveedor.nombre}}</td>
 
                 <td>    
                     <a href="{{ url_for('inventario.edit', id=inventario.id) }}">Editar</a>

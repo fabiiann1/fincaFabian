@@ -23,13 +23,6 @@
                 <option value="{{ finca.id }}" {% if finca.id == fincas.finca_id %} selected {% endif %}>{{ finca.nombre }}</option>
             {% endfor %}
         </select>
-
-        <label for="empleado_id">Empleado:</label>
-        <select name="empleado_id" id="empleado_id">
-            {% for empleados in movies %}
-                <option value="{{ finca.id }}" {% if finca.id == empleado.empleado_id %} selected {% endif %}>{{ empleado.nombre }}</option>
-            {% endfor %}
-        </select>
         <button type="submit">Actualizar Visita</button>
     </form>
 </body>

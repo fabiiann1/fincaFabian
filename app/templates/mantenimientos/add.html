@@ -14,8 +14,21 @@
         <input type="text" id="descripcion" name="descripcion" required>
 
         <label for="fecha">Fecha:</label>
-        <input type="text" id="fecha" name="fecha" required>
+        <input type="date" id="fecha" name="fecha" required>
 
+        <label for="inventario_id">Objeto:</label>
+        <select id="inventario_id" name="inventario_id">
+            {% for inventario in inventarios %}
+                <option value="{{ inventario.id }}">{{ inventario.nombre }}</option>
+            {% endfor %}
+        </select>
+        
+         <label for="empleado_id">Empleado:</label>
+        <select id="empleado_id" name="empleado_id">
+            {% for empleado in empleados %} 
+                <option value="{{ empleado.id }}">{{ empleado.nombre }}</option>
+            {% endfor %}
+        </select>
        
         <button type="submit">Agregar Mantenimiento</button>
     </form>

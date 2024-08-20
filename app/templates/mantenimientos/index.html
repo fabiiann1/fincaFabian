@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Movies</title>
-</head>x|
+</head>
 <body>
     <h1>Listado de Mantenimientos</h1>
     <table>
@@ -14,24 +14,29 @@
             <th>ID</th>
             <th>Descripcion</th>
             <th>Fecha</th>
+            <th>Objeto</th>
+            <th>Empleado</th>
             <th>Acciones</th>
         </tr>
-        {% for mmantenimientos in data %}
+        {% for mantenimiento in data %}
             <tr>
-                <td>{{ mantenimientos.id }}</td>
-                <td>{{ mantenimientos.Descripcion }}</td>
-                <td>{{ mantenimientos.Fecha }}</td>
-
+                <td>{{ mantenimiento.id }}</td>
+                <td>{{ mantenimiento.descripcion }}</td>
+                <td>{{ mantenimiento.fecha }}</td>
+                <td>{{ mantenimiento.inventario.nombre}}</td>
+                <td>{{ mantenimiento.empleado.nombre}}</td>
                 <td>    
-                    <a href="{{ url_for('mantenimientos.edit', id=mantenimientos.id) }}">Editar</a>
-                    <a href="{{ url_for('mantenimiento.delete', id=mantenimientos.id) }}">Eliminar</a>
+                    <a href="{{ url_for('mantenimiento.edit', id=mantenimiento.id) }}">Editar</a>
+                    <a href="{{ url_for('mantenimiento.delete', id=mantenimiento.id) }}">Eliminar</a>
                     <!-- Agrega aquí el enlace para eliminar -->
                 </td>
             </tr>
         {% endfor %}
     </table>
     <a href="{{ url_for('mantenimiento.add') }}">Agregar Mantenimiento</a>
+    <a href="{{ url_for('home.home') }}">Volver al home</a>
     <br>
+
     
 </body>
 </html>

@@ -12,6 +12,5 @@ class Empleados(db.Model):
     inventario = db.relationship('Inventarios', back_populates='empleado')
     medicamento = db.relationship('Medicamentos', back_populates='empleado')
     mantenimiento = db.relationship('Mantenimientos', back_populates='empleado')
-    visita = db.relationship('Visitas', back_populates='empleado')
     animal = db.relationship('Animales',back_populates='empleado')
     finca = db.relationship('Fincas',back_populates='empleado')

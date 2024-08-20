@@ -16,3 +16,4 @@ class Inventarios(db.Model):
     mantenimiento = db.relationship('Mantenimientos', back_populates='inventario')
     empleado = db.relationship('Empleados',back_populates='inventario')
     finca = db.relationship('Fincas',back_populates='inventario')
+    proveedor = db.relationship('Proveedores',back_populates='inventario')

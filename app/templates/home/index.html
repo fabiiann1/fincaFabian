@@ -1,43 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_home.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Home</title>
 </head>
+
 <body>
-    <div class="botones">
+     <div class="sidebar">
 
-        <div class="colum1">
-            <a href="{{ url_for('empleado.index') }}"><button>ir a Empleados</button></a>
-        </div>
+        <a href="{{ url_for('empleado.index') }}"><button>Empleados</button></a>
+        <a href="{{ url_for('animal.index') }}"><button>Animales</button></a>
+        <a href="{{ url_for('finca.index') }}"><button>Fincas</button></a>
+        <a href="{{ url_for('inventario.index') }}"><button>Inventario</button></a>
+        <a href="{{ url_for('proveedor.index') }}"><button>Proveedores</button></a>
+        <a href="{{ url_for('medicamento.index') }}"><button>Medicamentos</button></a>
+        <a href="{{ url_for('mantenimiento.index') }}"><button>Mantenimientos</button></a>
+        <a href="{{ url_for('visita.index') }}"><button>Visitas</button></a>
 
-        <div class="colum2">
-            <a href="{{ url_for('animal.index') }}"><button>ir a animales</button></a>
-        </div>
-
-        <div class="">
-            <a href="{{ url_for('finca.index') }}"><button>ir a fincas</button></a>
-        </div>
-
-        <div>
-            <a href="{{ url_for('inventario.index') }}"><button>ir a Inventario</button></a>
-        </div>
-       <div>
-            <a href="{{ url_for('proveedor.index') }}"><button>ir a Proveedores</button></a>
-       </div>
-
-       <div>
-            <a href="{{ url_for('medicamento.index') }}"><button>ir a Medicamentos</button></a>
-       </div>
-       <div>
-        <a href=""><button>ir a Mantenimientos</button></a>
-       </div>
-
-    <div>
-        <a href=""><button>ir a Visitas</button></a>
+    </div>  
+    <div class="content">
+        <object name="contentFrame" data="/app/templates/fincas/index.html"></object> <!-- Carga por defecto -->
     </div>
-        
-    </div>
-</body>
+
+</body> 
 </html> 
