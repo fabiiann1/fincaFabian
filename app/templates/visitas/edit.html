@@ -11,6 +11,7 @@
 </head>
 <body>
     <h1>Editar Visita</h1>
+    <div class="input-group">
     <form action="{{ url_for('visita.edit', id=visita.id) }}" method="post">
         
         <label for="fecha">Fecha:</label>
@@ -27,6 +28,7 @@
         </select>
         <button type="submit">Actualizar Visita</button>
     </form>
+    </div>
 </body>
 </html>
 {%endblock%}

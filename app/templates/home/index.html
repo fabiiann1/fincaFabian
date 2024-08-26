@@ -9,6 +9,58 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title> Home</title>
 </head>
+<style>
+    
+    .input-group {
+  width: 30%; /* Adjust as needed */
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 35px;
+  background-color: #fffdfd;
+}   
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group input[type="text"],
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box; /* Ensures content fits within padding */
+}
+
+.input-group button {
+
+    position: center;
+    padding:8px 12px;
+    margin:8px 0 0;
+    font-family:'Montserrat',sans-serif;
+    border:2px solid #414150;
+    background:0;
+    color:#5a5a6e;
+    cursor:pointer;
+    transition:all .3s
+}
+
+.input-group button:hover {
+  background-color: #96a196;
+}
+
+h1{
+    text-align: center;
+   
+}
+.en-date{
+    text-align: left;
+    width: 100;
+}
+</style>
 <body>
     <div class="sidebar">
         <h2>Menú</h2>
@@ -21,12 +73,15 @@
             <li><a href="{{ url_for('medicamento.index') }}" class="nav-link">Medicamentos</a></li>
             <li><a href="{{ url_for('mantenimiento.index') }}" class="nav-link">Mantenimientos</a></li>
             <li><a href="{{ url_for('visita.index') }}" class="nav-link">Visitas</a></li>
+            <li><a href="{{ url_for('auth.logout') }}" class="nav-link">Cerrar sesion</a></li>
         </ul>
-    </div>
+    </div> 
     
     <div class="content">
         {% block content %}
-        <!-- El contenido específico de cada página se insertará aquí -->
+        <h2 class="titlee">Bienvenido al Sistema de Gestión de Fincas</h2>
+        <p class="contenido">"En el mundo agrícola, la eficiencia y la organización son claves para el éxito. Nuestro Sistema de Gestión de Fincas está diseñado para simplificar y centralizar todos los aspectos de la administración de una finca. Con este sistema, podrá gestionar fácilmente el inventario, los animales, los empleados, los proveedores, y más, todo desde una única plataforma. Nuestro objetivo es ofrecerle una herramienta completa y fácil de usar que le permita tomar decisiones informadas y optimizar las operaciones diarias de su finca".</p>
+        <img src="{{ url_for('static', filename='images/finca.jpeg') }}" alt="Imagen de una finca" class="imagen-home">
         {% endblock %}
     </div>
     

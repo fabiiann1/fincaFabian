@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Edit</title>
 </head>
+
 <body>
     <h1>Editar Mantenimiento</h1>
+    <div class="input-group">
     <form action="{{ url_for('mantenimiento.edit', id=mantenimiento.id) }}" method="post">
 
         <label for="descripcion">Descripcion</label>
@@ -36,6 +38,7 @@
        
         <button type="submit">Actualizar Mantenimiento</button>
     </form>
+    </div>
 </body>
 </html>
 {%endblock%}
