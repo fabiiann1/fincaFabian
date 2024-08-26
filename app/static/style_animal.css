@@ -1,0 +1,47 @@
+/* Estilo para el título */
+.an-titulo {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la tabla */
+.an-table {
+    border-collapse: collapse;
+    width: 100%;
+    float: right; /* Centra la tabla horizontalmente */
+}
+
+/* Estilo para las celdas de la tabla */
+.an-table th, .an-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Estilo para los encabezados de la tabla */
+.an-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* Estilo para el enlace en la tabla */
+.an-table a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.an-table a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para los enlaces de acción */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}   

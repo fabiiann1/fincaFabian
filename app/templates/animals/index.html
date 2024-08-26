@@ -1,15 +1,18 @@
+{% extends"home/index.html" %}
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_nimal.css') }}">
     <title>Animal</title>
 </head>
 <body>
-    <h1>Lista de Animales</h1>
-    <table>
+    <h1 class="titulo">Lista de Animales</h1>
+    <table class="tablas">
         <tr>
             <th>ID</th>
             <th>Nombre</th>
@@ -19,6 +22,7 @@
             <th>Finca</th>
             <th>Empleado</th>
             <th>Proveedor</th>
+            <th>Acciones</th>
         </tr>
         {% for animal in data %}
             <tr>
@@ -38,9 +42,11 @@
             </tr>
         {% endfor %}
     </table>
+    <div class="botones">
     <a href="{{ url_for('animal.add') }}">Agregar Animal</a>
     <br>
     <a href="{{ url_for('home.home') }}">Volver al Home</a>
-   
+    </div>
 </body>
 </html>
+{%endblock%}

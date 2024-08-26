@@ -1,0 +1,48 @@
+
+    .input-group {
+  width: 30%; /* Adjust as needed */
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 35px;
+  background-color: #fffdfd;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group input[type="text"],
+.input-group select {
+  width: 115%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box; /* Ensures content fits within padding */
+}
+
+.input-group button {
+
+    position: center;
+    padding:8px 12px;
+    margin:8px 0 0;
+    font-family:'Montserrat',sans-serif;
+    border:2px solid #414150;
+    background:0;
+    color:#5a5a6e;
+    cursor:pointer;
+    transition:all .3s
+}
+
+.input-group button:hover {
+  background-color: #3e8e41;
+}
+
+h1{
+    text-align: center;
+   
+}
+
+

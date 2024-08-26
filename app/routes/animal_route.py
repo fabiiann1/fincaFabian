@@ -43,12 +43,22 @@ def edit(id):
     if request.method == 'POST':
 
         animal.nombre = request.form['nombre']
+        animal.especie = request.form['especie']
+        animal.raza = request.form['raza']
+        animal.edad = request.form['edad']
+        animal.finca_id = request.form['finca_id']
+        animal.empleado_id = request.form['empleado_id']
+        animal.proveedor_id = request.form['proveedor_id']
         
 
         db.session.commit()
         return redirect(url_for('animal.index'))
+    
+    fincas = Fincas.query.all()
+    empleados = Empleados.query.all()
+    proveedores = Proveedores.query.all()
 
-    return render_template('animals/edit.html', animal=animal)
+    return render_template('animals/edit.html', animal=animal,fincas=fincas,empleados=empleados,proveedores=proveedores)
     
 
 @bp.route('/Animal/delete/<int:id>')

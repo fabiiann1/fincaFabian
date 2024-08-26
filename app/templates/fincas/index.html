@@ -1,3 +1,5 @@
+{% extends"home/index.html" %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +10,14 @@
     <title>Movies</title>
 </head> 
 <body>
-    <h1>Lista de Fincas</h1>
-    <table>
+    <h1 class="titulo">Lista de Fincas</h1>
+    <table class="tablas">
         <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Ubicacion</th>
             <th>Tamaño</th>
+            <th>Acciones</th>
 
         {% for fincas in data %}
             <tr>
@@ -31,9 +34,12 @@
             </tr>
         {% endfor %}
     </table>
+    <div class="botones">
     <a href="{{ url_for('finca.add') }}">Agregar Finca</a>
     <br>
     <a href="{{ url_for('home.home') }}">Volver al home</a>
+    </div>
 </body>
 </html>
+{%endblock%}
 

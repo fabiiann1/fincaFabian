@@ -40,7 +40,7 @@ def edit(id):
 
     if request.method == 'POST':
 
-        visita.fecha = request.form['nombre']
+        visita.fecha = request.form['fecha']
         visita.motivo = request.form['motivo']
         visita.finca_id = request.form['finca_id']
         
@@ -48,8 +48,10 @@ def edit(id):
         db.session.commit()
         return redirect(url_for('visita.index'))
     
+    fincas = Fincas.query.all()
+    
 
-    return render_template('visitas/edit.html',visita=visita)
+    return render_template('visitas/edit.html',visita=visita,fincas=fincas)
 
     
 

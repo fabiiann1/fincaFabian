@@ -1,27 +1,34 @@
+{% extends"home/index.html" %}
+{% block content %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_e_a.css') }}">
     <title>add</title>
 </head>
+
 <body>
     <h1>Agregar Animal</h1>
+
+    <div class="input-group">
     <form action="{{ url_for('animal.add') }}" method="post">
 
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
 
         <label for="especie">Especie</label>
-        <input type="text" id="especie" name="especie" required>
+        <input type="text" id="especie" name="especie" placeholder="Especie" required>
         
         <label for="raza">Raza</label>
-        <input type="text" id="raza" name="raza" required>
+        <input type="text" id="raza" name="raza" placeholder="Raza" required>
 
         <label for="edad">Edad</label>
-        <input type="text" id="edad" name="edad" required>
+        <input type="text" id="edad" name="edad" placeholder="Edad" required>
 
         <label for="finca_id">Finca:</label>
         <select id="finca_id" name="finca_id">
@@ -43,13 +50,10 @@
                 <option value="{{ proveedor.id }}">{{ proveedor.nombre }}</option>
             {% endfor %}
         </select>
-
-
-
-        
-        
         <button type="submit">Agregar Animal</button>
-
+    </div>
     </form>
 </body>
 </html>
+
+{%endblock%}

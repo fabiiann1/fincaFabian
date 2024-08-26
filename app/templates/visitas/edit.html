@@ -1,3 +1,5 @@
+{% extends"home/index.html" %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,18 +14,19 @@
     <form action="{{ url_for('visita.edit', id=visita.id) }}" method="post">
         
         <label for="fecha">Fecha:</label>
-        <input type="text" id="fecha" name="fecha" value="{{ visita.fecha }}" required>
+        <input type="date" id="fecha" name="fecha" value="{{ visita.fecha }}" required>
         
         <label for="motivo">Motivo:</label>
         <input type="text" id="motivo" name="motivo" value="{{ visita.motivo }}" required>
         
         <label for="finca_id">Finca:</label>
-        <select name="finca_id" id="finca_id">
-            {% for fincas in movies %}
-                <option value="{{ finca.id }}" {% if finca.id == fincas.finca_id %} selected {% endif %}>{{ finca.nombre }}</option>
+        <select id="finca_id" name="finca_id">
+            {% for finca in fincas %}
+                <option value="{{ finca.id }}">{{ finca.nombre }}</option>
             {% endfor %}
         </select>
         <button type="submit">Actualizar Visita</button>
     </form>
 </body>
 </html>
+{%endblock%}

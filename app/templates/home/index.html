@@ -1,30 +1,32 @@
-<!DOCTYPE html>
-<html lang="es">
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style_home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Home</title>
+    <title> Home</title>
 </head>
-
 <body>
-     <div class="sidebar">
-
-        <a href="{{ url_for('empleado.index') }}"><button>Empleados</button></a>
-        <a href="{{ url_for('animal.index') }}"><button>Animales</button></a>
-        <a href="{{ url_for('finca.index') }}"><button>Fincas</button></a>
-        <a href="{{ url_for('inventario.index') }}"><button>Inventario</button></a>
-        <a href="{{ url_for('proveedor.index') }}"><button>Proveedores</button></a>
-        <a href="{{ url_for('medicamento.index') }}"><button>Medicamentos</button></a>
-        <a href="{{ url_for('mantenimiento.index') }}"><button>Mantenimientos</button></a>
-        <a href="{{ url_for('visita.index') }}"><button>Visitas</button></a>
-
-    </div>  
-    <div class="content">
-        <object name="contentFrame" data="/app/templates/fincas/index.html"></object> <!-- Carga por defecto -->
+    <div class="sidebar">
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="{{ url_for('empleado.index') }}" class="nav-link">Empleados</a></li>
+            <li><a href="{{ url_for('animal.index') }}" class="nav-link">Animales</a></li>
+            <li><a href="{{ url_for('finca.index') }}" class="nav-link">Fincas</a></li>
+            <li><a href="{{ url_for('inventario.index') }}" class="nav-link">Inventario</a></li>
+            <li><a href="{{ url_for('proveedor.index') }}" class="nav-link">Proveedores</a></li>
+            <li><a href="{{ url_for('medicamento.index') }}" class="nav-link">Medicamentos</a></li>
+            <li><a href="{{ url_for('mantenimiento.index') }}" class="nav-link">Mantenimientos</a></li>
+            <li><a href="{{ url_for('visita.index') }}" class="nav-link">Visitas</a></li>
+        </ul>
     </div>
-
-</body> 
-</html> 
+    <div class="content">
+        {% block content %}
+        <!-- El contenido específico de cada página se insertará aquí -->
+        {% endblock %}
+    </div>
+</body>
+</html>

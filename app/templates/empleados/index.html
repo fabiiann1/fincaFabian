@@ -1,3 +1,5 @@
+{% extends"home/index.html" %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +10,8 @@
     <title>Empleados</title>
 </head>
 <body>
-    <h1>Lista de Empleados</h1>
-    <table>
+    <h1 class="titulo">Lista de Empleados</h1>
+    <table class="tablas">
         <tr>
             <th>ID</th>
             <th>Nombre</th>
@@ -35,9 +37,10 @@
             </tr>
         {% endfor %}
     </table>
+    <div class="botones">
     <a href="{{ url_for('empleado.add') }}">Agregar Empleado</a>
     <a href="{{ url_for('home.home') }}">Volver al Home</a>
     <br>
-    
-</html>
+    </div>
+</html>{%endblock%}
 

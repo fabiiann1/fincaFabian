@@ -1,29 +1,59 @@
+{% extends"home/index.html" %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_e_a.css') }}">
     <title>Edit</title>
 </head>
+
 <body>
     <h1>Editar Animal</h1>
-    <form action="{{ url_for('animal.edit', id=animal.id) }}" method="post">
+    <div class="input-group">
+        <form action="{{ url_for('animal.edit', id=animal.id) }}" method="post">
 
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" value="{{ animal.nombre }}" required>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" value="{{ animal.nombre }}" required>
 
-        <label for="especie">Especie:</label>
-        <input type="text" id="especie" name="especie" value="{{ animal.especie }}" required>
+            <label for="especie">Especie:</label>
+            <input type="text" id="especie" name="especie" value="{{ animal.especie }}" required>
 
-        <label for="raza">Raza:</label>
-        <input type="text" id="raza" name="raza" value="{{ animal.raza }}" required>
+            <label for="raza">Raza:</label>
+            <input type="text" id="raza" name="raza" value="{{ animal.raza }}" required>
 
-        <label for="edad">Edad:</label>
-        <input type="text" id="edad" name="edad" value="{{ animal.edad }}" required>
+            <label for="edad">Edad:</label>
+            <input type="text" id="edad" name="edad" value="{{ animal.edad }}" required>
 
-        <button type="submit">Actualizar Animal</button>
-    </form>
+            <label for="finca_id">Finca</label>
+            <select id="finca_id" name="finca_id">
+                {% for finca in fincas %}
+                    <option value="{{ finca.id }}">{{ finca.nombre }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="empleado_id">Finca</label>
+            <select id="empleado_id" name="empleado_id">
+                {% for empleado in empleados %}
+                    <option value="{{ empleado.id }}">{{ empleado.nombre }}</option>
+                {% endfor %}
+            </select>
+
+
+            <label for="proveedor_id">Finca</label>
+            <select id="proveedor_id" name="proveedor_id">
+                {% for proveedor in proveedores %}
+                    <option value="{{ proveedor.id }}">{{ proveedor.nombre }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Actualizar Animal</button>
+        </form>
+    </div>
 </body>
 </html>
+{%endblock%}

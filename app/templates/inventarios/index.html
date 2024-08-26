@@ -1,3 +1,5 @@
+{% extends"home/index.html" %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Movies</title>
+    <title>Inventario</title>
 </head>
 <body>
-    <h1>Lista de Inventarios</h1>
-    <table>
+    <h1 class="tiulo">Lista de Inventarios</h1>
+    <table class="tablas">
         <tr>
             <th>ID</th>
-            <th>Nombre</th>
+            <th>Nombre</th> 
             <th>Categoria</th>
             <th>Descipcion</th>
             <th>Cantidad</th>
@@ -42,10 +44,13 @@
             </tr>
         {% endfor %}
     </table>
+    <div class="botones">
     <a href="{{ url_for('inventario.add') }}">Agregar Inventario</a>
     <a href="{{ url_for('home.home') }}">Volver al Home</a>
     <br>
+    </div>
    
 </body>
 </html>
+{%endblock%}
 
