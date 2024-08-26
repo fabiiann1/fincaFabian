@@ -10,13 +10,14 @@
     <title>Animal</title>
 </head>
 <body>
-    <h1>Lista de Proveedores</h1>
-    <table>
+    <h1 class="titulo">Lista de Proveedores</h1>
+    <table class="tablas">
         <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Contacto</th>
             <th>Direccion</th>
+            <th>Acciones</th>
             
         </tr>
         {% for proveedor in data %}
@@ -33,9 +34,11 @@
             </tr>
         {% endfor %}
     </table>
+    <div class="botones">
     <a href="{{ url_for('proveedor.add') }}">Agregar proveedor</a>
     <br>
     <a href="{{ url_for('home.home') }}">Volver al Home</a>
+    </div>
    
 </body>
 </html>

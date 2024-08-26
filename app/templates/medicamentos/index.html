@@ -10,8 +10,8 @@
     <title>medica</title>
 </head>
 <body>
-    <h1>Lista de Medicamentos</h1>
-    <table>
+    <h1 class="titulo">Lista de Medicamentos</h1>
+    <table class="tablas">
         <tr>
             <th>ID</th>
             <th>Nombre</th>
@@ -41,9 +41,11 @@
             </tr>
         {% endfor %}
     </table>
+    <div class="botones">
     <a href="{{ url_for('medicamento.add') }}">Agregar Medicamento</a>
     <br>
     <a href="{{ url_for('home.home') }}">Volver al home</a>
+    </div>
 </body>
 </html>
 {%endblock%}

@@ -10,8 +10,8 @@
     <title>Movies</title>
 </head>
 <body>
-    <h1>Listado de Mantenimientos</h1>
-    <table>
+    <h1 class="titulo">Listado de Mantenimientos</h1>
+    <table class="tablas">
         <tr>
             <th>ID</th>
             <th>Descripcion</th>
@@ -35,9 +35,11 @@
             </tr>
         {% endfor %}
     </table>
+    <div class="botones">
     <a href="{{ url_for('mantenimiento.add') }}">Agregar Mantenimiento</a>
     <a href="{{ url_for('home.home') }}">Volver al home</a>
     <br>
+    </div>
 
     
 </body>

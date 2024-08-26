@@ -10,13 +10,14 @@
     <title>Visitas</title>
 </head>
 <body>
-    <h1>Lista de Visitas</h1>
-    <table>
+    <h1 class="titulo">Lista de Visitas</h1>
+    <table class="tablas">
         <tr>
             <th>ID</th>
             <th>Fecha</th>
             <th>Motivo</th>
             <th>Finca</th>
+            <th>Acciones</th>
         </tr>   
         {% for visita in data %}
             <tr>
@@ -36,9 +37,11 @@
             </tr>
         {% endfor %}
     </table>
+    <div class="botones">
     <a href="{{ url_for('visita.add') }}">Agregar Visitas</a>
     <br>
     <a href="{{ url_for('home.home') }}">Volver al home</a>
+    </div>
     
 </body>
 </html>
