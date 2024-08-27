@@ -38,6 +38,7 @@ def edit(id):
 
 
         empleado.nombre = request.form['nombre']
+        empleado.cargo = request.form['cargo']
         empleado.fecha = request.form['fecha_ingreso']
         empleado.finca_id = request.form['finca_id']
         
