@@ -10,7 +10,7 @@
 </head>
 <style>
     
-    .input-group {
+.input-group {
   width: 30%; /* Adjust as needed */
   margin: 30px auto;
   padding: 20px;
@@ -59,6 +59,10 @@ h1{
     text-align: left;
     width: 100;
 }
+
+.cancelar a{
+    color: #2b2929;
+}
 </style>
 <body>
     <h1>Agregar Empleado</h1>
@@ -84,6 +88,8 @@ h1{
         </select>
         
         <button type="submit">Agregar Empleados</button>
+        <button class="cancelar"><a href="{{ url_for('empleado.index') }}">Cancelar</a></button>
+        
     </form>
     </div>
 </body>

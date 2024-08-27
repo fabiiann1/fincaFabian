@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_login.css') }}">
 </head>
+
 <body>
 
 <div class="container mt-5">
@@ -28,7 +30,7 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
         </form>
     </div>
 </div>

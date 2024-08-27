@@ -25,6 +25,7 @@
         <input type="text" id="direccion" name="direccion" value="{{ proveedor.direccion }}" required>
         
         <button type="submit">Actualizar Proveedor</button>
+        <button class="cancelar"><a href="{{ url_for('proveedor.index') }}">Cancelar</a></button>
     </form>
     </div>
 </body>

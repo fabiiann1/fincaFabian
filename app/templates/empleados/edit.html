@@ -62,6 +62,10 @@ h1{
     text-align: left;
     width: 100;
 }
+
+.cancelar a{
+    color: #5a5a6e;
+}
 </style>
     <h1>Editar Empleados</h1>
     <div class="input-group">
@@ -85,6 +89,7 @@ h1{
 
 
         <button type="submit">Actualizar Empleado</button>
+        <button class="cancelar"><a href="{{ url_for('empleado.index') }}">Cancelar</a></button>
         
     </form>
     </div>

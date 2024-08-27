@@ -60,6 +60,9 @@ h1{
     text-align: left;
     width: 100;
 }
+.cancelar a{
+  color: #4a4949;
+}
 </style>
 <body>
     <h1>Editar Finca</h1>
@@ -76,6 +79,7 @@ h1{
         <input type="text" id="Tamaño" name="tamaño" value="{{ finca.tamaño }}" required>
         
         <button type="submit">Actualizar Finca</button>
+        <button class="cancelar"><a href="{{ url_for('finca.index') }}">Cancelar</a></button>
     </form>
     </div>
 </body>

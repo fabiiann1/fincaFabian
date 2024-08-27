@@ -60,6 +60,9 @@ h1{
     text-align: left;
     width: 100;
 }
+.cancelar a{
+    color: #5a5a6e;
+}
 </style>
 <body>
     <h1>Editar Medicamento</h1>
@@ -93,6 +96,7 @@ h1{
         </select>
 
         <button type="submit">Actualizar Medicamento</button>
+        <button class="cancelar"><a href="{{ url_for('medicamento.index') }}">Cancelar</a></button>
     </form>
     </div>
 </body>

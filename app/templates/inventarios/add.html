@@ -12,7 +12,7 @@
 </head>
 <style>
     
-    .input-group {
+.input-group {
   width: 30%; /* Adjust as needed */
   margin: 30px auto;
   padding: 20px;
@@ -29,7 +29,7 @@
 
 .input-group input[type="text"],
 .input-group select {
-  width: 150%;
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -60,6 +60,9 @@ h1{
 .en-date{
     text-align: left;
     width: 100;
+}
+.cancelar a{
+    color: #5a5a6e;
 }
 </style>
 <body>
@@ -103,7 +106,8 @@ h1{
             {% endfor %}
         </select>
         
-        <button type="submit">Agregar</button>
+        <button type="submit">Agregar Objeto</button>
+        <button class="cancelar"><a href="{{ url_for('inventario.index') }}">Cancelar</a></button>
     </form>
     </div>
 </body>

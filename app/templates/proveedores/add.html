@@ -60,6 +60,9 @@ h1{
     text-align: left;
     width: 100;
 }
+.cancelar a{
+  color: #5a5a6e;
+}
 </style>
 <body>
     <h1>Agregar Proveedor</h1>
@@ -76,6 +79,7 @@ h1{
         <input type="text" id="direccion" name="direccion" required>
 
         <button type="submit">Agregar Proveedor</button>
+        <button class="cancelar"><a href="{{ url_for('proveedor.index') }}">Cancelar</a></button>
     </form>
     </div>
 </body>

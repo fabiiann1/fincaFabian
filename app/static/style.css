@@ -78,11 +78,11 @@ body {
   
   display: block; /* Hace que la imagen sea un elemento de bloque */
   margin: 20px auto; /* Centra la imagen horizontalmente y agrega margen superior e inferior */
-  max-width: 47%; /* Ajusta la imagen para que ocupe el 80% del ancho del contenedor */
+  max-width: 120%; /* Ajusta la imagen para que ocupe el 80% del ancho del contenedor */
   height: auto; /* Mantiene la proporción de la imagen */
   border-radius: 10px; /* Bordes redondeados */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor de la imagen */
-  border: 3px solid #27ae60; /* Borde verde alrededor de la imagen */
+  border: 3px solid #778077; /* Borde verde alrededor de la imagen */
 
 
 }
@@ -90,6 +90,7 @@ body {
 
 .titulo{
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .tablas {
     width: 90%; /* Ocupa todo el ancho disponible */
@@ -97,6 +98,7 @@ body {
     margin: 0 auto;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
   
   .tablas th, .tablas td {
@@ -129,43 +131,32 @@ body {
     color: #000000;
     
 }
-/*
-form{
-  padding: 50px 55px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  text-align: center;
-  width: 340px;
-}
-
-.imput-group{
+.botones {
   display: flex;
-  flex-direction: column;
-  text-align: left;
+  gap: 20px;
+  justify-content: center; /* Alinea los botones a la izquierda */
+  margin-top: 20px;
 }
 
-label{
-  color: #283629;
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 15px;
+.botones a {
+  padding: 10px 20px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  color: #333333;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-input,textarea{
-  padding: 17px 25px;
-  border-radius: 25px;
-  margin-bottom: 20px;
-  background-color: #edfff0;
-  border: 2px solid #f0faf1;
-  color: #283629;
-  outline: none;
+.botones a:hover {
+  background-color: #f0f0f0;
+  color: #000000;
 }
 
-input::placeholder,textarea::placeholder{
-  color: #b5cab6;
+.cancelar a{
 
+  color: #575757;
 }
-.form-txt{
-  margin-bottom: 30px;
-  display:flex ;
-}
+
+

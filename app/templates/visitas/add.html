@@ -60,6 +60,9 @@ h1{
     text-align: left;
     width: 100;
 }
+.cancelar a{
+    color: #5a5a6e;
+}
 </style>
 <body>
     <h1>Agregar Visita</h1>
@@ -79,6 +82,7 @@ h1{
             {% endfor %}
         </select>
         <button type="submit">Agregar Visita</button>
+        <button class="cancelar"><a href="{{ url_for('visita.index') }}">Cancelar</a></button>
     </form>
     </div>
 </body>

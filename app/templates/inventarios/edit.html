@@ -60,6 +60,9 @@ h1{
     text-align: left;
     width: 100;
 }
+.cancelar a{
+    color: #5a5a6e;
+}
 </style>
 <body>
     <h1>Editar Inventario</h1>
@@ -101,12 +104,9 @@ h1{
                 <option value="{{ proveedor.id }}">{{ proveedor.nombre }}</option>
             {% endfor %}
         </select>
-
-
-
-
-        
+    
         <button type="submit">Actualizar inventario</button>
+        <button class="cancelar"><a href="{{ url_for('inventario.index') }}">Cancelar</a></button>
     </form>
     </div>
 </body>

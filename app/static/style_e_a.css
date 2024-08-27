@@ -16,7 +16,7 @@
 
 .input-group input[type="text"],
 .input-group select {
-  width: 115%;
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -37,12 +37,16 @@
 }
 
 .input-group button:hover {
-  background-color: #3e8e41;
+  background-color: #394039;
 }
 
 h1{
     text-align: center;
    
+}
+
+.cancelar a{
+  color: #4f504f;
 }
 
 
